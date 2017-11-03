@@ -24,7 +24,10 @@
 				<h2>Log In</h2>
 			</div>
 			<div th:if="${param.error}" class="red">
-			Incorrect user name or passwword
+			utilisateur ou mot de passe incorrect
+			</div>
+			<div th:if="${param.logout}" class="red">
+			vous êtes déconnecté
 			</div>
 				<div class="panel-body">
 				<form th:action="@{/login}" method="post">

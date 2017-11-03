@@ -2,24 +2,24 @@ var app = angular.module("MyApp", [ 'ui.router' ]);
 
 app.config(function($stateProvider, $urlRouterProvider) {
 	$stateProvider.state('home', {
-		url : '/home',
-		templateUrl : 'view/home.html',
-		controller : 'HomeController'
+		url : '/',
+		templateUrl : 'view/chercherDeplacement.html',
+		controller : 'chercherDeplacementController'
 	});
-	$stateProvider.state('chercherProduit', {
-		url : '/chercherProduit',
-		templateUrl : 'view/chercherProduit.html',
-		controller : 'ChercherProduitController'
+	$stateProvider.state('chercherDeplacement', {
+		url : '/chercherDeplacement',
+		templateUrl : 'view/chercherDeplacement.html',
+		controller : 'chercherDeplacementController'
 	});
-	$stateProvider.state('ajouterProduit', {
-		url : '/ajouterProduit',
-		templateUrl : 'view/ajouterProduit.html',
-		controller : 'AjouterProduitController'
+	$stateProvider.state('ajouterDeplacement', {
+		url : '/ajouterDeplacement',
+		templateUrl : 'view/ajouterDeplacement.html',
+		controller : 'AjouterDeplacementController'
 	});
 	
 });
 
-app.controller("AjouterProduitController", function($scope, $http) {
+app.controller("AjouterDeplacementController", function($scope, $http) {
 
 });
 
@@ -27,36 +27,36 @@ app.controller("HomeController", function($scope, $http) {
 
 });
 
-app.controller("ChercherProduitController", function($scope, $http) {
+app.controller("chercherDeplacementController", function($scope, $http) {
 	// décalaration des variable
-	$scope.pageProduit = null;
+	$scope.pageDeplacement = null;
 	$scope.motCle = "";
 	$scope.pageCurrent = 0;
 	$scope.size = 3;
 	$scope.pages = [];
 	// déclaration des fonctions
-	$scope.chercherProduit = function() {
+	$scope.chercherDeplacement = function() {
 		if ($scope.motCle == "*") {
 			$scope.motCle = "";
 		}
 		$http.get(
-				"http://localhost:8080/chercherProduit?mc=" + $scope.motCle
+				"http://localhost:8080/chercherDeplacement?mc=" + $scope.motCle
 						+ "&page=" + $scope.pageCurrent + "&size="
 						+ $scope.size).then(function(data) {
-			$scope.pageProduit = data.data;
+			$scope.pageDeplacement = data.data;
 			$scope.pages = new Array(data.data.totalPages)
 		}, function(data) {
 			console.log(data);
 		});
 	}
-	$scope.getProduits = function() {
+	$scope.getDeplacements = function() {
 		$scope.pageCurrent = 0;
-		$scope.chercherProduit();
+		$scope.chercherDeplacement();
 	}
 
 	$scope.gotoPage = function(p) {
 		$scope.pageCurrent = p;
-		$scope.chercherProduit();
+		$scope.chercherDeplacement();
 	}
 
 });

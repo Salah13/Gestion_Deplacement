@@ -10,6 +10,7 @@ import fr.gds.entities.Deplacement;
 
 public interface DeplacementRepository extends JpaRepository<Deplacement, Long>{
 	
-	
+	@Query("select d from Deplacement d where d.client like :mc")
+	public Page<Deplacement> chercherDeplacementByClient(@Param("mc")String mc, Pageable page);
 
 }

@@ -17,27 +17,29 @@
 	</div>
 	<div class="container spacer">
 		Mot clé : <input type="text" ng-model="motCle"
-			ng-enter="getProduits()" />
-		<button type="button" class="btn btn-primary" ng-click="getProduits()">Charger</button>
+			ng-enter="getDeplacements()" />
+		<button type="button" class="btn btn-primary" ng-click="getDeplacements()">Charger</button>
 	</div>
 	<div class="container">
 		<table class="table table-striped table-bordered table-list">
 			<thead>
 				<tr>
 					<th scope="col">#</th>
-					<th scope="col">Désignation</th>
-					<th scope="col">Prix</th>
-					<th scope="col">Quantité</th>
+					<th scope="col">Utilisateur</th>
+					<th scope="col">Client</th>
+					<th scope="col">Date de Deplacement</th>
+					<th scope="col">Fichier de d'intervention</th>
 					<th class="col-tools"><span class="glyphicon glyphicon-wrench"
 						aria-hidden="true"></span></th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="p in pageProduit.content">
+				<tr ng-repeat="p in pageDeplacement.content">
 					<td>{{p.id}}</td>
-					<td>{{p.designation}}</td>
-					<td>{{p.prix}}</td>
-					<td>{{p.quantite}}</td>
+					<td>{{p.user}}</td>
+					<td>{{p.client}}</td>
+					<td>{{p.dateDeplacement}}</td>
+					<td>{{p.file}}</td>
 					<td align="left"><a class="btn btn-default"><span
 							class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a> <a
 						class="btn btn-danger"><span class="glyphicon glyphicon-trash"

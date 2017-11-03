@@ -9,8 +9,8 @@ public class SecurityController extends WebMvcConfigurerAdapter{
 
 	@Override
 	   public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/chercherProduit").setViewName("chercherProduit");
-        registry.addViewController("/").setViewName("chercherProduit");
+        registry.addViewController("/chercherProduit").setViewName("/chercherProduit");
+        registry.addViewController("/").setViewName("/chercherProduit");
         registry.addViewController("/login").setViewName("login");
     }
 }
