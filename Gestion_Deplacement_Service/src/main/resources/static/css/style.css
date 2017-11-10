@@ -1,5 +1,5 @@
 .spacer {
-	margin-top: 30px;
+	margin-top: 50px;
 }
 
 .cliquable {
@@ -115,29 +115,16 @@ img.logo {
 	min-height: 100%;
 	background-size: cover;
 }
-.add{
-	margin-right: 200px
+
+.table-bordered>thead>tr>th.col-tools {
+	text-align: center;
+	width: 120px;
 }
 
-.table-bordered > thead > tr > th.col-tools {
-    text-align: center;
-    width: 120px;
-}
-
-h2.background {
-    position: relative;
-    margin-left:200px;
-}
-
-h2.double:before {
-    border-bottom: 5px solid;
-    color: var(--button-color);
- 	background-color: var(--button-background-color);
-  	border-radius: var(--border-radius);
-    content: "";
-    margin: 0 auto; /* this centers the line to the full width specified */
-    position: absolute;
-    top: 150%; left: 0; right: 0;
-    width: 95%;
-    z-index: 2;
+.break {
+	color: #fff;
+background-color: #f0ad4e;
+border-color: #eea236;
+	height:2px;
+	
 }

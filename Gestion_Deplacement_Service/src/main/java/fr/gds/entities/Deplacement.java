@@ -16,6 +16,10 @@ public class Deplacement implements Serializable{
 	private String client;
 	private Date dateDeplacement;
 	private byte[] file;
+	
+	public Deplacement() {
+		super();
+	}
 	public Deplacement(String user, String client, Date dateDeplacement, byte[] file) {
 		super();
 		this.user = user;

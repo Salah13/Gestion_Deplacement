@@ -31,7 +31,7 @@ public class DeplacementRestService {
 		return pr.save(p);
 	}
 
-	@RequestMapping(value = "/updateDeplacement/{id}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/majDeplacement/{id}", method = RequestMethod.PUT)
 	public Deplacement updateDeplacement(@RequestBody Deplacement p, @PathVariable("id") Long id) {
 		p.setId(id);
 		return pr.saveAndFlush(p);
